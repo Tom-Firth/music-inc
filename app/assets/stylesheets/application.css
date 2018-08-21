@@ -123,8 +123,8 @@ form {
 }
 
 
-@import 'navbar';
-@import 'btn';
-@import 'banner';
-@import 'card';
+@import 'components/navbar';
+@import 'components/btn';
+@import 'components/banner';
+@import 'components/card';
 
