@@ -1,0 +1,30 @@
+<div class="container">
+  <%= form_tag albums_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  placeholder: "Write & press Enter for search..."
+  %>
+  <% end %>
+
+  <%= paginate @albums %>
+
+  <div class="row">
+
+    <% @albums.each do |album| %>
+    <a href="<%= album_path(album) %>" class="col-sm-4 col-xs-12 card-custom">
+      <div>
+        <% if album.cover.present? %>
+        <%= cl_image_tag album.cover, class: 'card-album-cover', height: 100, width: 100, crop: :fill %>
+        <% else %>
+        <img class="card-album-cover" src="https://lescreasdetiti.fr/52303-large_default/motif-thermocollant-point-d-interrogation.jpg" width="100" height="100">
+        <% end %>
+        <br>
+        <br>
+        <span class="card-album-title"><%= album.title %></span>
+        <br>
+        <span class="card-album-author"><%= album.author %></span>
+      </div>
+    </a>
+    <% end %>
+  </div>
+</div>

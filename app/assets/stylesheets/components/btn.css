@@ -1,0 +1,44 @@
+.btn-home {
+  margin: 0 auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #EEE;
+  color: #EEE;
+  padding: 10px 16px;
+  border-radius: 50px;
+  width: 150px;
+  height: 50px;
+  line-height: 26px;
+  text-align: center;
+  transition-duration: 0.4s;
+  margin-bottom: 20px;
+}
+
+.btn-home:hover {
+  transform: scale(1.1);
+  color: #EEE;
+  text-decoration: none;
+  background-color: #02446C;
+}
+
+.btn-custom {
+  margin: 0 auto;
+  display: block;
+  background-color: #02446C;
+  color: #EEE;
+  padding: 10px 16px;
+  border-radius: 50px;
+  width: 150px;
+  height: 50px;
+  line-height: 28px;
+  text-align: center;
+  transition-duration: 0.4s;
+  margin-bottom: 20px;
+}
+
+.btn-custom:hover {
+  transform: scale(1.1);
+  color: #EEE;
+  text-decoration: none;
+  background-color: #02446C;
+}

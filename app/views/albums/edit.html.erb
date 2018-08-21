@@ -1,0 +1,17 @@
+<% if user_signed_in? && @album.user == current_user %>
+
+  <h1>Edit Album</h1>
+<%= simple_form_for @album do |f| %>
+  <%= f.input :title, value: "#{@album.title}", label: false, required: false %>
+  <br><label for="album_cover" class="label-file">Add a cover picture :</label><br>
+  <%= f.input :cover, label: false %>
+  <%= f.hidden_field :cover_cache %>
+  <br>
+  <%= f.text_field :description, value: "#{@album.description}" %><br><br>
+  <%= f.button :submit %>
+<% end %>
+
+
+<% else %>
+  <p>Nope.</p>
+<% end %>

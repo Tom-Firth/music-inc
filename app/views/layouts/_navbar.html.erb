@@ -1,0 +1,21 @@
+<div class="navbar1">
+  <div class="navbar1-left">
+    <%= link_to "Music-Inc.", albums_path, class: 'navbar1-left' %>
+  </div>
+  <div class="navbar1-right">
+  <%= link_to "Albums List", albums_path %> |
+  <% if user_signed_in?  %>
+  <%= link_to 'Create Album', new_album_path  %> |
+    <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path, method: :get do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_in", default: "Log In") %>
+    <% end %> |
+    <%= link_to new_user_registration_path, method: :get do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_up", default: "Sign Up") %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
