@@ -27,3 +27,9 @@
 .card-show-ul {
   margin-top: 30px;
 }
+
+.desc-show-album {
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 400px;
+}

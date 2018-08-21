@@ -1,4 +1,5 @@
-<div class="text-center">
+<div class="container text-center">
+
   <ul class="card-show-ul">
     <% if @album.cover.present? %>
     <li><%= cl_image_tag @album.cover, height: 200, width: 200, class: 'card-album-cover', crop: :fill %></li>
@@ -8,12 +9,14 @@
     <br>
     <li class="card-album-title"><%= @album.title %></li>
     <li class="card-album-author"><%= @album.author %></li>
-    <li><%= @album.description %></li>
+    <li><p class="desc-show-album"><%= @album.description %></p></li>
   </ul>
   <%= link_to 'Back', albums_path, class: 'btn-custom' %>
 <% if user_signed_in? && current_user == @album.user %>
-<%= link_to 'update album', edit_album_path(@album) %>
-<%= link_to 'delete album', album_path(@album), method: :delete, data: { confirm: 'Sure to Delete your Album?' }  %>
+<div class="container-flex">
+  <%= link_to 'update album', edit_album_path(@album), class: 'btn-custom btn-update' %>
+  <%= link_to 'delete album', album_path(@album), class: 'btn-custom btn-delete', method: :delete, data: { confirm: 'Sure to Delete your Album?' }  %>
+</div>
 <% end %>
 </div>
 
